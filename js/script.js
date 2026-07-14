@@ -2,10 +2,15 @@ const hero = document.querySelector(".hero-fondo");
 
 const hoy = new Date();
 
-const dia = hoy.getDate();
-const mes = hoy.getMonth() + 1;
+const dia = hoy.getDate(); 
+const mes = hoy.getMonth() + 1; 
+
+/* const dia = 10; */
+/*const mes = 10; */
 
 let estacion = "";
+
+const logo = document.querySelector(".logo img");
 
 /* ===========================
    ESTACIÓN DEL AÑO
@@ -56,6 +61,7 @@ const temas = {
     primavera:{
 
         imagen:"img/primavera.webp",
+        logo:"img/logo-primavera.webp",
         color:"#8DDA4E",
         sombra:"rgba(141,218,78,.35)"
 
@@ -64,6 +70,7 @@ const temas = {
     verano:{
 
         imagen:"img/verano.webp",
+        logo:"img/logo-verano.webp",
         color:"#D7FF00",
         sombra:"rgba(215,255,0,.35)"
 
@@ -72,6 +79,7 @@ const temas = {
     otono:{
 
         imagen:"img/otono.webp",
+        logo:"img/logo-otono.webp",
         color:"#FF8C3A",
         sombra:"rgba(255,140,58,.35)"
 
@@ -80,6 +88,7 @@ const temas = {
     invierno:{
 
         imagen:"img/invierno.webp",
+        logo:"img/logo-invierno.webp",
         color:"#74D9FF",
         sombra:"rgba(116,217,255,.35)"
 
@@ -128,6 +137,8 @@ spans[2].textContent = lemas[estacion][2];
 =========================== */
 
 hero.style.backgroundImage = `url('${temas[estacion].imagen}')`;
+
+logo.src = temas[estacion].logo;
 
 document.documentElement.style.setProperty(
     "--color-principal",
